@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <title>留言板</title>
+</head>
+<body>
+<div class="container">
+    {include file="index/header"/}
+        <div class="card-header">
+        <div class="card-body">
+            <a class="btn btn-primary" href="index.php/addmsg">添加留言</a>
+            <form action="/index.php/index/index/search" method="post" >
+                <input type="text" class="form-control mt-2" name="keywords" style="width: 400px">
+                <button type="submit" class="btn btn-primary mt-2">搜索</button>
+            </form>
+            <table class="table mt-2">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">内容</th>
+                    <th scope="col">发布时间</th>
+                    <th scope="col">操作</th>
+                </tr>
+                </thead>
+                <thead>
+                {volist name="res" id="vo"}
+                <tr>
+                    <th scope="row">{$vo.id}</th>
+                    <td>{$vo.content}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <a href="/index.php/index/index/edit?id={$vo.id}" class="btn btn-sm btn-primary">修改</a>
+                        <a href="/index.php/index/index/del?id={$vo.id}" class="btn btn-sm btn-danger">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

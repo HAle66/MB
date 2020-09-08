@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <title>新增</title>
+</head>
+<body>
+<div class="container">
+    <div class="card text-left mt-2">
+    <div class="card-header ">留言板</div>
+        <form action="/index.php/savemsg"  class="mt-2">
+        <div class="card-body">
+            <a class="btn btn-primary mt-2" href="/">留言列表</a>
+                <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">添加留言</button>
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
